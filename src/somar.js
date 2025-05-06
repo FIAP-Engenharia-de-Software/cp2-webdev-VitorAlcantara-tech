@@ -5,15 +5,32 @@
 
 function somar(a, b) {
   let resultado = a + b;
-  return resultado;
+  if (a == String) {
+    a = parseInt(a)
+    resultado = a + b
+  }
+  else if (b == String) {
+    b = parseInt(b)
+  }
+  else if (a != Number) {
+    return "Parâmetro inválido"
+  }
+  else if (b != Number) {
+    return "Parâmetro inválido"
+  }
+  else if (b == undefined) {
+    resultado == a
+  } else {
+    return resultado;
+  }
 }
 
-  
-  // Testando a função
-  console.log(somar(5));         // Esperado: 5
-  console.log(somar(5, "3"));    // Esperado: 8
-  console.log(somar("10", 10));  // Esperado: 20
-  console.log(somar("abc", 5));  // Esperado: "Parâmetro inválido"
-  console.log(somar(null, 5));   // Esperado: "Parâmetro inválido"
 
-  module.exports = { somar };
+// Testando a função
+console.log(somar(5));         // Esperado: 5
+console.log(somar(5, "3"));    // Esperado: 8
+console.log(somar("10", 10));  // Esperado: 20
+console.log(somar("abc", 5));  // Esperado: "Parâmetro inválido"
+console.log(somar(null, 5));   // Esperado: "Parâmetro inválido"
+
+module.exports = { somar };

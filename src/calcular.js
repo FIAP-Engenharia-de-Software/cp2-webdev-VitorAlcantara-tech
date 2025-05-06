@@ -10,7 +10,32 @@
 // - Executar a operação correta e retornar o resultado;
 
 function calcular(num1, num2, operador) {
-  // TODO: implementar função
+  if (isNaN(num1) === true && isNaN(num2) == true) {
+    return "Erro: parâmetros inválidos"
+  }
+  else if (operador === '/' && num2 == 0) {
+    return "Erro: divisão por zero"
+  }
+  else if (operador != ['+', '-', '*', '/']) {
+    return "Erro: operação inválida"
+  } else {
+    if (operador == '+') {
+      calcular = num1 + num2
+      return calcular
+    }
+    else if (operador == '-') {
+      calcular = num1 - num2
+      return calcular
+    }
+    else if (operador == '*') {
+      calcular = num1 * num2
+      return calcular
+    }
+    else if (operador == '/') {
+      calcular = num1 / num2
+      return calcular
+    }
+  }
 }
 
 
